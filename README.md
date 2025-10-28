@@ -19,4 +19,6 @@ are used to test the importance of these attributes on the changes in catchment 
   - R script trains random forest models to impute the changes in RB-Index in the After1 period created in data grab script. Datasets of catchment attributes and RB-indices are contructed separately. The script performs a hyperparameter
     grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
 
-    
+*  data_grab_ROBIN.R
+  -  R script that loads files containing precipitation and streamflow data for each catchment from ROBIN database. The script loops through all CARAVAN US catchments and calculates RB-index and evaporative index before and
+    after forest loss years. The .csv list of forest loss years from Hansen et al. 2013 was generated separately in QGIS.
