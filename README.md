@@ -22,3 +22,6 @@ are used to test the importance of these attributes on the changes in catchment 
 * data_grab_ROBIN.R
   -  R script that loads files containing precipitation and streamflow data for each catchment from ROBIN database. The script loops through all CARAVAN US catchments and calculates RB-index and evaporative index before and
     after forest loss years. The .csv list of forest loss years from Hansen et al. 2013 was generated separately in QGIS.
+
+* loss_yr_period_logic_guide.txt
+  - .txt file describing the different periods water cycling variables are broken into before and after forest loss events in catchments.
