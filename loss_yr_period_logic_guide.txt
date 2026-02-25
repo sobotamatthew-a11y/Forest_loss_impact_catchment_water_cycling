@@ -2,9 +2,3 @@ ei1_1 = change in evaporative index from 0-1 yr before loss year to 0-1 yr after
 -	If loss year is 2005, ei1_1 = ei_2004 – ei_2006
 ei1_2 = change in evaporative index from 1-2 yrs before loss year to 1-2 yrs after loss year
 -	If loss year is 2005, ei1_2 = (ei_2003 to 2004) – (ei_2006 to 2007)
-
-
-ei2_1 = change in evaporative index from the first year after loss year to the second year after loss year
--	If loss year is 2005, ei2_1 = ei_2006 – ei_2007
-ei2_2 = change in evaporative index from the first 2 years after loss year to the second 2 years after loss year 
--	If loss year is 2005, ei2_2 = (ei_2006 to 2007) – (ei_2008 to 2009)
