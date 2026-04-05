@@ -37,3 +37,6 @@ are used to test the importance of these attributes on the changes in catchment 
 
 * loss_yr_period_logic_guide.txt
   - .txt file describing the different periods water cycling variables are broken into before and after forest loss events in catchments.
+ 
+* add_attributes_to_loss_stat_frames
+  - R script that merges file with all calculated hydrologic variables (RB and EI) with their respective biophysical attribute variables.
