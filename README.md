@@ -40,3 +40,6 @@ are used to test the importance of these attributes on the changes in catchment 
  
 * add_attributes_to_loss_stat_frames
   - R script that merges file with all calculated hydrologic variables (RB and EI) with their respective biophysical attribute variables.
+ 
+* before_after_regression.m
+  - MATLAB script plotting regression analysis of ΔRB and ΔEI: evaluating hydrologic changes across 1–5 year windows following forest loss. Includes linear fits, zero-change thresholds, and t-test significance markers (*).
