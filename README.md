@@ -47,4 +47,26 @@ are used to test the importance of these attributes on the changes in catchment 
 * filter_full_record_RB_EI.R
   - R script that removes NA values from calculated RB and EI values in each temporal window dataset. This script also omits EI values outside of the physically plausible range of 0-1. RB values less than 0 are also removed.
 
+* plot_RFE_rmse.m
+  - MATLAB script that plots the Root Mean Square Error value at each recursive feature elminiation step. The optimal set of variables indicated by the lowest RMSE value iteration step is plotted as a red dot.
+ 
+* plot_RFE_mase.m
+  - MATLAB script that plots the Mean Absolute Scaled Error value at each recursive feature elminiation step.
+ 
+* plot_RFE_pbias.m
+  - MATLAB script that plots the Percent-Bias value at each recursive feature elminiation step.
+ 
+* plot_RFE_rsquared.m
+  - MATLAB script that plots the Coefficient of Determination value at each recursive feature elminiation step.
+ 
+* ranked_correlation_feature_drop.py
+  - Python script iterates through all dataset files, identifies highly correlated numeric predictor variables using Spearman correlation, and removes redundant features above the defined threshold.
+ 
+* triple_set_varimp_plot_EI.R
+  - R script that trains and tunes Random Forest models (h2o) for EI target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
 
+* triple_set_varimp_plot_RB.R
+  - R script that trains and tunes Random Forest models (h2o) for RB target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
+ 
+* vars_corr_longitude.R
+  - R script that computes and ranks Spearman correlations between longitude and the entire catchment attribute variable dataset. The script also generates a summary table with interpretations.
