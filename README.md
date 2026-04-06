@@ -43,3 +43,8 @@ are used to test the importance of these attributes on the changes in catchment 
  
 * before_after_regression.m
   - MATLAB script plotting regression analysis of ΔRB and ΔEI: evaluating hydrologic changes across 1–5 year windows following forest loss. Includes linear fits, zero-change thresholds, and t-test significance markers (*).
+ 
+* filter_full_record_RB_EI.R
+  - R script that removes NA values from calculated RB and EI values in each temporal window dataset. This script also omits EI values outside of the physically plausible range of 0-1. RB values less than 0 are also removed.
+
+
