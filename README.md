@@ -17,23 +17,8 @@ are used to test the importance of these attributes on the changes in catchment 
 * RFE_master.R
   - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
 
-* EI1_table
-  - R script that creates supplemental table listing and describing the RFE-selected catchment variables during the 1-year evaporative index window.
- 
-* EI2_table
-  - R script that creates supplemental table listing and describing the RFE-selected catchment variables during the 2-year evaporative index window.
- 
-* EI5_table
-  - R script that creates supplemental table listing and describing the RFE-selected catchment variables during the 5-year evaporative index window.
- 
-* RB1_table
-  - R script that creates supplemental table listing and describing the RFE-selected catchment variables during the 1-year RB-index window.
- 
-* RB2_table
-  - R script that creates supplemental table listing and describing the RFE-selected catchment variables during the 2-year RB-index window.
- 
-* RB5_table
-  - R script that creates supplemental table listing and describing the RFE-selected catchment variables during the 5-year RB-index window.
+* supp_vars_tables
+  - R script that (1) creates a table listing all variables used in RFE and RF modeling (2) creates tables describing the top selected catchment features from RF varaible importance ranking at each analysis window (EI1-5, RB1-5).
 
 * loss_yr_period_logic_guide.txt
   - .txt file describing the different periods water cycling variables are broken into before and after forest loss events in catchments.
