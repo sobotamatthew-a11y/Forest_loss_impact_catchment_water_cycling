@@ -19,8 +19,8 @@ This repository deoes not include the original datasets since they are available
 Please download these datasets from their original repositories before running the workflow.
 
 ## Workflow
-1. Identify forest-loss years for each catchment
-   * (performed in QGIS)
+1. Identify forest loss years for each catchment
+     * Performed in QGIS using Hansen et al., (2013)
 
 2. Calculate RB Index and Evaporative Index   
    * NetCDF_data_grab_US.R
@@ -44,9 +44,6 @@ Please download these datasets from their original repositories before running t
 
 * supp_vars_tables
   - R script that (1) creates a table listing all variables used in RFE and RF modeling (2) creates tables describing the top selected catchment features from RF varaible importance ranking at each analysis window (EI1-5, RB1-5).
-
-* loss_yr_period_logic_guide.txt
-  - .txt file describing the different periods water cycling variables are broken into before and after forest loss events in catchments.
  
 * before_after_regression.m
   - MATLAB script plotting regression analysis of ΔRB and ΔEI: evaluating hydrologic changes across 1–5 year windows following forest loss. Includes linear fits, zero-change thresholds, and t-test significance markers (*).
@@ -62,9 +59,6 @@ Please download these datasets from their original repositories before running t
  
 * plot_RFE_rsquared.m
   - MATLAB script that plots the Coefficient of Determination value at each recursive feature elminiation step.
- 
-* ranked_correlation_feature_drop.py
-  - Python script iterates through all dataset files, identifies highly correlated numeric predictor variables using Spearman correlation, and removes redundant features above the defined threshold.
  
 * triple_set_varimp_plot_EI.R
   - R script that trains and tunes Random Forest models (h2o) for EI target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
