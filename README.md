@@ -2,8 +2,21 @@
 
 This repository contains the code used to reproduce the analyses presented in the accompanying manuscript. The study integrates global catchment datasets with forest disturbance data to evaluate how catchment characteristics regulate hydrologic responses following forest loss.
 
-### Project conceptual diagram
+## Project conceptual diagram
 <img width="1280" height="720" alt="conceptual_diagram" src="https://github.com/user-attachments/assets/fb7f6409-287b-4285-9551-2825429acafb" />
+
+## Data
+
+This repository deoes not include the original datasets since they are available from their respective sources.
+
+* CARAVAN catchment datasets
+* Global Forest Change (Hansen et al., 2013)
+* HydroATLAS
+* ERA5-Land
+* MacroSheds
+* ROBIN
+
+Please download these datasets from their original repositories before running the workflow.
 
 ### File descriptions
 * NetCDF_data_grab_US.R
