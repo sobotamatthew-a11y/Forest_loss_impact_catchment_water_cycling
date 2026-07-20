@@ -20,11 +20,11 @@ Please download these datasets from their original repositories before running t
 
 ## Workflow
 1. Identify forest-loss years for each catchment
-   (performed in QGIS)
+   *(performed in QGIS)
 
 2. Caclculate RB Index and Evaporative Index   
-* NetCDF_data_grab_US.R
-  - R script that loads .nc files containing precipitation and streamflow data for each catchment from CARAVAN database. The script loops through all CARAVAN US catchments and calculates RB-index and evaporative index before and after forest loss years. The .csv list of forest loss years from Hansen et al. 2013 was generated separately in QGIS.
+   * NetCDF_data_grab_US.R
+     - R script that loads .nc files containing precipitation and streamflow data for each catchment from CARAVAN database. The script loops through all CARAVAN US catchments and calculates RB-index and evaporative index before and after forest loss years. The .csv list of forest loss years from Hansen et al. 2013 was generated separately in QGIS.
 
 * RFE_master.R
   - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
