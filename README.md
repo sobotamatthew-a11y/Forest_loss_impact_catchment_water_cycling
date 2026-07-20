@@ -27,20 +27,20 @@ Please download these datasets from their original repositories before running t
      - R script that loads .nc files containing precipitation and streamflow data for each catchment from CARAVAN database. The script loops through all CARAVAN US catchments and calculates RB-index and evaporative index before and after forest loss years. The .csv list of forest loss years from Hansen et al. 2013 was generated separately in QGIS.
 
 3. Merge hydrologic metrics with catchment attributes
-   * add_attributes_to_loss_stat_frames
-    - R script that merges file with all calculated hydrologic variables (RB and EI) with their respective biophysical attribute variables.
+   * add_attributes_to_loss_stat_frames.R
+      - R script that merges file with all calculated hydrologic variables (RB and EI) with their respective biophysical attribute variables.
 
 4. Filter unrealistic values
    * filter_full_record_RB_EI.R
-    - R script that removes NA values from calculated RB and EI values in each temporal window dataset. This script also omits EI values outside of the physically plausible range of 0-1. RB values less than 0 are also removed.
+      - R script that removes NA values from calculated RB and EI values in each temporal window dataset. This script also omits EI values outside of the physically plausible range of 0-1. RB values less than 0 are also removed.
   
 5. Remove highly correlated predictors
    * ranked_correlation_feature_drop.py
-    - Python script iterates through all dataset files, identifies highly correlated numeric predictor variables using Spearman correlation, and removes redundant features above the defined threshold.
+      - Python script iterates through all dataset files, identifies highly correlated numeric predictor variables using Spearman correlation, and removes redundant features above the defined threshold.
 
 6. Train Random Forest models with recursive feature elimination
    * RFE_master.R
-    - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
+      - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
 
 * supp_vars_tables
   - R script that (1) creates a table listing all variables used in RFE and RF modeling (2) creates tables describing the top selected catchment features from RF varaible importance ranking at each analysis window (EI1-5, RB1-5).
