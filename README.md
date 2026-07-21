@@ -41,29 +41,18 @@ Please download these datasets from their original repositories before running t
    * RFE_master.R
       - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
 
-* supp_vars_tables
-  - R script that (1) creates a table listing all variables used in RFE and RF modeling (2) creates tables describing the top selected catchment features from RF varaible importance ranking at each analysis window (EI1-5, RB1-5).
- 
-* before_after_regression.m
-  - MATLAB script plotting regression analysis of ΔRB and ΔEI: evaluating hydrologic changes across 1–5 year windows following forest loss. Includes linear fits, zero-change thresholds, and t-test significance markers (*).
+6. Generate figures and tables
+   * triple_set_varimp_plot_*.R
+       - R script that trains and tunes Random Forest models (h2o) for RB/EI target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
+    
+   * plot_RFE_*.m
+       - MATLAB scripts that plot the performance metric value at each recursive feature elminiation step. The optimal set of variables indicated by the lowest value iteration step is plotted as a red dot.
+    
+   * before_after_regression.m
+       - MATLAB script plotting regression analysis of ΔRB and ΔEI: evaluating hydrologic changes across 1–5 year windows following forest loss. Includes linear fits, zero-change thresholds, and t-test significance markers (*).
+    
+   * supp_vars_tables.R 
+       -  R script that (1) creates a table listing all variables used in RFE and RF modeling (2) creates tables describing the top selected catchment features from RF varaible importance ranking at each analysis window.
 
-* plot_RFE_rmse.m
-  - MATLAB script that plots the Root Mean Square Error value at each recursive feature elminiation step. The optimal set of variables indicated by the lowest RMSE value iteration step is plotted as a red dot.
- 
-* plot_RFE_mase.m
-  - MATLAB script that plots the Mean Absolute Scaled Error value at each recursive feature elminiation step.
- 
-* plot_RFE_pbias.m
-  - MATLAB script that plots the Percent-Bias value at each recursive feature elminiation step.
- 
-* plot_RFE_rsquared.m
-  - MATLAB script that plots the Coefficient of Determination value at each recursive feature elminiation step.
- 
-* triple_set_varimp_plot_EI.R
-  - R script that trains and tunes Random Forest models (h2o) for EI target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
-
-* triple_set_varimp_plot_RB.R
-  - R script that trains and tunes Random Forest models (h2o) for RB target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
- 
-* vars_corr_longitude.R
-  - R script that computes and ranks Spearman correlations between longitude and the entire catchment attribute variable dataset. The script also generates a summary table with interpretations.
+   * vars_corr_longitude.R
+       - R script that computes and ranks Spearman correlations between longitude and the entire catchment attribute variable dataset. The script also generates a summary table with interpretations.
