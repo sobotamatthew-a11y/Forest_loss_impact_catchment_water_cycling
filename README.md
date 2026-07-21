@@ -24,7 +24,7 @@ Please download these datasets from their original repositories before running t
        - Catchment-specific years of mode forest loss were identified using the Hansen et al. (2013) Global Forest Change dataset.
 
 2. Calculate hydrologic response metrics
-     - NetCDF_data_grab_US.R
+     - NetCDF_data_grab_*.R
        - Processes CARAVAN NetCDF streamflow and precipitation data to calculate pre- and post-disturbance Richards–Baker Index (RB) and Evaporative Index (EI) values for each catchment.
 
 3. Merge hydrologic metrics with catchment attributes
