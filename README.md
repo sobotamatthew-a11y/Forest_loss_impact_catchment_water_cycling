@@ -57,3 +57,22 @@ Please download these datasets from their original repositories before running t
 
      - vars_corr_longitude.R
        - Computes correlations between longitude and catchment attributes used in the manuscript.
+
+## Outputs
+
+The workflow reproduces:
+
+* Random Forest models
+* Variable importance rankings
+* Recursive feature elimination results
+* RMSE, MASE, R², and PBIAS figures
+* ΔRB and ΔEI analyses
+* Publication-quality figures
+
+## Related manuscript
+
+This repository accompanies the manuscript:
+
+Sobota, M., Knighton, J.
+Catchment Properties Regulate Hydrologic Responses to Forest Loss Across Global Watersheds.
+Manuscript in preparation.
