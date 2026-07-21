@@ -23,37 +23,37 @@ Please download these datasets from their original repositories before running t
      - Performed in QGIS
        - Catchment-specific years of mode forest loss were identified using the Hansen et al. (2013) Global Forest Change dataset.
 
-2. Calculate RB Index and Evaporative Index   
-   * NetCDF_data_grab_US.R
-     - R script that loads .nc files containing precipitation and streamflow data for each catchment from CARAVAN database. The script loops through all CARAVAN US catchments and calculates RB-index and evaporative index before and after forest loss years. The .csv list of forest loss years from Hansen et al. 2013 was generated separately in QGIS.
+2. Calculate hydrologic response metrics
+     - NetCDF_data_grab_US.R
+       - Processes CARAVAN NetCDF streamflow and precipitation data to calculate pre- and post-disturbance Richards–Baker Index (RB) and Evaporative Index (EI) values for each catchment.
 
 3. Merge hydrologic metrics with catchment attributes
-   * add_attributes_to_loss_stat_frames.R
-      - R script that merges file with all calculated hydrologic variables (RB and EI) with their respective biophysical attribute variables.
+     - add_attributes_to_loss_stat_frames.R
+       - Combines calculated RB/EI metrics with catchment biophysical attributes for subsequent analyses.
 
 4. Filter observations and remove correlated predictors
-   * filter_full_record_RB_EI.R
-      - R script that removes NA values from calculated RB and EI values in each temporal window dataset. This script also omits EI values outside of the physically plausible range of 0-1. RB values less than 0 are also removed.
+     - filter_full_record_RB_EI.R
+       - Removes incomplete observations and physically unrealistic RB and EI values.
   
-   * ranked_correlation_feature_drop.py
-      - Python script iterates through all dataset files, identifies highly correlated numeric predictor variables using Spearman correlation, and removes redundant features above the defined threshold.
+     - ranked_correlation_feature_drop.py
+       - Identifies and removes highly correlated predictor variables using Spearman correlation.
 
-5. Train Random Forest models with recursive feature elimination
-   * RFE_master.R
-      - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
+5. Train Random Forest models 
+     - RFE_master.R
+       - Performs recursive feature elimination, hyperparameter tuning, and Random Forest model training to predict changes in RB Index and Evaporative Index and identify the most influential catchment characteristics.
 
-6. Generate figures and tables
-   * triple_set_varimp_plot_*.R
-       - R script that trains and tunes Random Forest models (h2o) for RB/EI target values at each temporal window. The script evaluates performance across training/validation/test splits, generates observed vs predicted comparison plots, and produces a combined scaled variable importance visualizaiton across models.
+6. Generate manuscript figures and tables
+     - before_after_regression.m
+       - Generates regression analyses comparing pre- and post-disturbance RB and EI across temporal windows.
     
-   * plot_RFE_*.m
-       - MATLAB scripts that plot the performance metric value at each recursive feature elminiation step. The optimal set of variables indicated by the lowest value iteration step is plotted as a red dot.
+     - plot_RFE_*.m
+       - Creates recursive feature elimination performance metric figures (RMSE, MASE, PBIAS, and R²).
     
-   * before_after_regression.m
-       - MATLAB script plotting regression analysis of ΔRB and ΔEI: evaluating hydrologic changes across 1–5 year windows following forest loss. Includes linear fits, zero-change thresholds, and t-test significance markers (*).
+     - triple_set_varimp_plot_*.R
+       - Generates variable importance figures, observed-versus-predicted plots, and model performance summaries.
     
-   * supp_vars_tables.R 
-       -  R script that (1) creates a table listing all variables used in RFE and RF modeling (2) creates tables describing the top selected catchment features from RF varaible importance ranking at each analysis window.
+     - supp_vars_tables.R 
+       -  Creates supplementary tables describing predictor variables and Random Forest variable importance rankings.
 
-   * vars_corr_longitude.R
-       - R script that computes and ranks Spearman correlations between longitude and the entire catchment attribute variable dataset. The script also generates a summary table with interpretations.
+     - vars_corr_longitude.R
+       - Computes correlations between longitude and catchment attributes used in the manuscript.
