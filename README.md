@@ -7,7 +7,7 @@ This repository contains the code used to reproduce the analyses presented in th
 
 ## Data
 
-This repository deoes not include the original datasets since they are available from their respective sources.
+This repository does not include the original datasets since they are available from their respective sources.
 
 * CARAVAN catchment datasets
 * Global Forest Change (Hansen et al., 2013)
@@ -67,7 +67,7 @@ The workflow reproduces:
 * Recursive feature elimination results
 * RMSE, MASE, R², and PBIAS figures
 * ΔRB and ΔEI analyses
-* Publication-quality figures
+* Publication figures and supplementary tables corresponding to the manuscript
 
 ## Related manuscript
 
