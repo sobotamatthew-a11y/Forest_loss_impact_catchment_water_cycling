@@ -19,9 +19,9 @@ This repository deoes not include the original datasets since they are available
 Please download these datasets from their original repositories before running the workflow.
 
 ## Workflow
-1. Identify forest-loss years for each catchment
+**1. Identify forest-loss years for each catchment**
      * Performed in QGIS
-       <br> Catchment-specific years of mode forest loss were identified using the Hansen et al. (2013) Global Forest Change dataset.
+       - Catchment-specific years of mode forest loss were identified using the Hansen et al. (2013) Global Forest Change dataset.
 
 2. Calculate RB Index and Evaporative Index   
    * NetCDF_data_grab_US.R
