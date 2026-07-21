@@ -30,15 +30,14 @@ Please download these datasets from their original repositories before running t
    * add_attributes_to_loss_stat_frames.R
       - R script that merges file with all calculated hydrologic variables (RB and EI) with their respective biophysical attribute variables.
 
-4. Filter unrealistic values
+4. Filter observations and remove correlated predictors
    * filter_full_record_RB_EI.R
       - R script that removes NA values from calculated RB and EI values in each temporal window dataset. This script also omits EI values outside of the physically plausible range of 0-1. RB values less than 0 are also removed.
   
-5. Remove highly correlated predictors
    * ranked_correlation_feature_drop.py
       - Python script iterates through all dataset files, identifies highly correlated numeric predictor variables using Spearman correlation, and removes redundant features above the defined threshold.
 
-6. Train Random Forest models with recursive feature elimination
+5. Train Random Forest models with recursive feature elimination
    * RFE_master.R
       - R script trains random forest models to impute the changes in RB-Index (RB) and evaporative index (EI) in the three temporal windows for each variables: 1-year, 2-year, and 5-year. Datasets of catchment attributes and RB-indices and EI are constructed separately. The script performs a hyperparameter grid search at each recursive feature elimination (RFE) iteration based on objective function. The script saves the optimal set of parameters and best model after RFE.
 
